@@ -1,0 +1,17 @@
+import DomainForm from "@/components/DomainForm";
+import ResultsTable from "@/components/ResultsTable";
+import { useState } from "react";
+
+export default function Home() {
+  const [results, setResults] = useState([]);
+
+  return (
+    <main className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow">
+        <h1 className="text-2xl font-bold mb-4">DA/PA Checker</h1>
+        <DomainForm setResults={setResults} />
+        {results.length > 0 && <ResultsTable results={results} />}
+      </div>
+    </main>
+  );
+}
